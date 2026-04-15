@@ -20,6 +20,8 @@ from config import settings
 
 def send_email(to_email: str, password: str):
     try:
+        print("📤 Sending email to:", to_email)
+
         msg = MIMEMultipart()
         msg["From"] = settings.MAIL_USERNAME
         msg["To"] = to_email
@@ -38,6 +40,9 @@ Please login and change your password.
 
         server = smtplib.SMTP(settings.MAIL_SERVER, settings.MAIL_PORT)
         server.starttls()
+
+        print("LOGIN USING:", settings.MAIL_USERNAME)
+        
         server.login(settings.MAIL_USERNAME, settings.MAIL_PASSWORD)
 
         server.send_message(msg)
@@ -48,4 +53,4 @@ Please login and change your password.
     except Exception as e:
         print("❌ Email failed:", str(e))
 
-        print("📤 Sending email to:", to_email)
+        # print("📤 Sending email to:", to_email)

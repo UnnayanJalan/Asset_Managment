@@ -2,9 +2,9 @@
 from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
-    MAIL_USERNAME: str = "your_email@yopmail.com"
-    MAIL_PASSWORD: str = "your_app_password"
-    MAIL_FROM: str = "your_email@yopmail.com"
+    MAIL_USERNAME: str = "unnayan.jalan@acldigital.com"
+    MAIL_PASSWORD: str = "gtjyjbbefkavbgjf"
+    MAIL_FROM: str = "unnayan.jalan@acldigital.com"
 
     MAIL_PORT: int = 587
     MAIL_SERVER: str = "smtp.gmail.com"
